@@ -1,0 +1,10 @@
+1. updateform page pe nav baar ki prob
+2. regster page mein alert change karna hai
+
+
+
+
+
+sahi 
+1. login page
+2. logout functionality

@@ -25,10 +25,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($user) or empty($pass)) {
         // echo '<div class="alert alert-success" role="alert">Your data is in our databse. Now you are Loggged in ! </div>';
-        echo '<script type="text/javascript">  alert("Enter details in required field");</script>';
+        // echo '<script type="text/javascript">  alert("Enter details in required field");</script>';
         // used javascript to show the above message
         // echo "<script>setTimeout('document.location.href = http://localhost/LOGIN/login.php;',500);</script>";
-        header("refresh: 3; location: login.php");
+        echo '
+            <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">enter the details</h4>
+            <p>fields cant be empty</p>
+            <hr>
+            </div>';
+            header("Refresh: 2; url= login.php");
+            exit();
     }
 
 
