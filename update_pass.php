@@ -1,6 +1,11 @@
 <?php
+
+session_start();
+
 include "basic_components/nav_bar.php";
 include "basic_components/server_connect.php";
+
+// var_dump($_SESSION['activeuser']);
 
 if($_SERVER['REQUEST_METHOD']=="POST")
 {
@@ -11,8 +16,11 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 
   if(empty($oldpass) or empty($npass) or empty($cnpass))
   {
-    echo "Fill all the details for changing the password";
-    header("location: Welcome.php");
+    echo '
+    <div class="alert alert-danger" role="alert">
+    <h4 class="alert-heading">Enter all the fields to continue</h4>
+    </div>';
+    header("refresh:2; url= Welcome.php");
   }
 
   else if (!preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $npass)) 
@@ -32,7 +40,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     <div class="alert alert-danger" role="alert">
     <h4 class="alert-heading">Password does not matcht</h4>
     <p>Please enter same password</p> <hr> </div>';
-    
+    header("refresh:2; url= update_pass.php");
   }
   else{
     // all things are correct
@@ -54,15 +62,9 @@ if($_SERVER['REQUEST_METHOD']=="POST")
       if($res)
       {
         echo '<div class="alert alert-success" role="alert">
-        <h4 class="alert-heading">Password changed</h4>
+        <h4 class="alert-heading">Password changed.Please Login again</h4>
         <hr> </div>';
         header("Refresh: 2; url= logout.php");
-      }
-      else{
-        echo '
-        <div class="alert alert-danger" role="alert">
-    <h4 class="alert-heading">Password does not matcht</h4>
-    </div>';
       }
     }
   }
@@ -87,7 +89,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
   <body>
 
      <h1 style="text-align: center ">Enter the details for updation</h1>
-     
+     <!-- <?php echo $_SESSION['activeuser']; ?> -->
     <form action="update_pass.php", method="post"> 
     <div class="form-group mt-3 ml-3">
                 <label for="pass">Old Password</label>
