@@ -69,6 +69,14 @@
        margin-top: -51.2%;
        margin-right: 10px;
      }
+     .blink{
+      animation: blinker 1s linear infinite;
+     }
+     @keyframes blinker {
+        50% {
+          opacity: 0;
+        }
+      }
    </style>
  </head>
 
@@ -137,10 +145,10 @@
     echo "<br>";
     echo '
     <div class="pass">
-     To update the password Click <a class= "mb-3"  style = "text-decoration: none" href="update_pass.php">Update Password</a>
+     To update the password Click <a class= "mb-3 blink"  style = "text-decoration: none" href="update_pass.php">Update Password</a>
     </div> ';
     echo "<br> <br> <br>";
-    echo '<h4 style="text-align: center">Make sure to logout after your work is done.</h4>';
+    echo '<h4 style="text-align: center"><blink>Make sure to logout after your work is done.</h4>';
     echo "<br>";
 
     ?>
