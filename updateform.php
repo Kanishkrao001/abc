@@ -12,7 +12,8 @@
 
 <body>
 
-<?php include "basic_components/nav_bar.php";
+<?php 
+     session_start(); include "basic_components/nav_bar.php";
 ?>
 
  <h3 style="text-align: center">Enter the details for update</h3>
@@ -37,7 +38,7 @@
         </div>
 
 
-        <button class="form-group mt-3 ml-3 btn btn-outline-primary" type="submit" class="btn btn-primary">Submit</button>
+        <button class="form-group mt-3 ml-3 btn btn-outline-primary active" type="submit" class="btn btn-primary btn-block">Submit</button>
     </form>
 
 </body>
