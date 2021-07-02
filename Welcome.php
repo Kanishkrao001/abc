@@ -31,7 +31,7 @@
        display: flex;
        width: 40%;
        /* flex-wrap: wrap; */
-       border: 1px dashed rgb(226, 37, 37);
+       /* border: 1px dashed rgb(226, 37, 37); */
 
        justify-content: space-between;
        /* justify-content: space-around;  */
@@ -64,6 +64,11 @@
         margin-right: 28px;
         /* background-color: lightskyblue; */
      }
+     .pass{
+       float: right;
+       margin-top: -51.2%;
+       margin-right: 10px;
+     }
    </style>
  </head>
 
@@ -73,19 +78,7 @@
 
     include "basic_components/nav_bar.php"; ?>
 
-   <!-- <div class="page">
-    <div class="ele1">
-      <img src="basic_components/av1.jpg" alt="photo">
-    </div>
-    <div class="ele2">
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex praesentium mollitia tempora.</p>
-    </div>
-    <div class="ele3">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate aliquid odit commodi 
-          repudiandae est velit recusandae voluptatum facere fuga facilis.</p>
-    </div>
-
-  </div> -->
+   
 
 <?php
    
@@ -94,11 +87,26 @@
     echo "<br>";
     echo '<p style = " background-color:white ;text-align: center; font-size:30px">Welcome to your portal......</p>';
     echo "<br>";
-    echo '<p style = "background-color: lightgreen; text-align:center; font-size:25px">Here is the list of users </p>';
+    echo '<p style = "background-color: lightgreen; padding-left:15px; font-size:25px">Here is the list of users </p>';
     echo "<br>";
 
     include "basic_components/server_connect.php";
+    ?>
 
+    <div class="page">
+    <div class="ele1">
+      <img src="basic_components/av1.jpg" alt="photo">
+    </div>
+    <div class="ele2">
+      <h4>Name</h4>
+    </div>
+    <div class="ele3">
+        <h4>Mobile No</h4>
+    </div>
+
+  </div>
+
+<?php
     $sql = "SELECT Name, Phone_no FROM users";
     $res = mysqli_query($connect, $sql);
 
@@ -124,11 +132,15 @@
      <?php
     }
 
-    echo 'To update your data Click <a class= "mb-3"  style = "text-decoration: none" href="updateform.php">Update</a>';
-    echo "<br> <br>";
-    echo 'To update the password Click <a class= "mb-3"  style = "text-decoration: none" href="update_pass.php">Update Password</a>';
+    // echo 'To update your data Click <a class= "mb-3"  style = "text-decoration: none" href="updateform.php">Update</a>';
+    // echo "<br> <br>";
+    echo "<br>";
+    echo '
+    <div class="pass">
+     To update the password Click <a class= "mb-3"  style = "text-decoration: none" href="update_pass.php">Update Password</a>
+    </div> ';
     echo "<br> <br> <br>";
-    echo 'Make sure to logout after your work is done.';
+    echo '<h4 style="text-align: center">Make sure to logout after your work is done.</h4>';
     echo "<br>";
 
     ?>
