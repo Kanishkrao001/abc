@@ -53,13 +53,13 @@
             <a class="nav-link " href="register.php">Register</a>
           </li> 
           <?php } else{ ?>
-            <li class="nav-item">
-            <a class="nav-link " href="update.php">Update Details</a>
+          </ul>
+          <li class="navbar-nav nav-item">
+            <a class="nav-link " href="updateform.php">Update Details</a>
           </li>
           <button class="btn btn-outline-success my-2 my-sm-0" onclick="document.location='logout.php' ">Sign Out</button>
        <?php } ?>
           </li>
-        </ul>
       </div>
     </nav>
   </div>
