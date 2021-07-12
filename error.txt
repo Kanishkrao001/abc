@@ -8,3 +8,6 @@
 sahi 
 1. login page
 2. logout functionality
+
+
+class="form-control"
